@@ -1,17 +1,66 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.List;
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
+        // Create a newSet instance
+        newSet<String> mySet = new newSet<>();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        // Add elements to the set
+        mySet.add("Apple");
+        mySet.add("Banana");
+        mySet.add("Orange");
+        mySet.add("Banana");
+        mySet.add("Orange");
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        // Print size and contents
+        System.out.println("Set size: " + mySet.size());
+        System.out.println("Contains 'Banana': " + mySet.contains("Banana"));
+
+        // Print all elements in the set
+        System.out.println("Elements in the set:");
+        for (String element : mySet) {
+            System.out.println(element);
         }
+
+        // Remove an element
+        mySet.remove("Apple");
+
+        // Print updated size and contents
+        System.out.println("Updated set size: " + mySet.size());
+        System.out.println("Contains 'Apple': " + mySet.contains("Apple"));
+
+        // Test containsAll
+        List<String> otherList = Arrays.asList("Banana", "Grapes");
+        System.out.println("Contains all elements: " + mySet.containsAll(otherList));
+
+        // Add multiple elements
+        mySet.addAll(otherList);
+
+        // Print updated size and contents
+        System.out.println("Updated set size: " + mySet.size());
+        System.out.println("Contains all elements: " + mySet.containsAll(otherList));
+
+        // Print all elements in the set
+        System.out.println("Elements in the set:");
+        for (String element : mySet) {
+            System.out.println(element);
+        }
+
+        //Test retainAll
+        List<String> l = Arrays.asList("Banana", "Grapes");
+        System.out.println("Retains all elements: " + mySet.retainAll(l));
+
+        // Print all elements in the set
+        System.out.println("Elements in the set:");
+        for (String element : mySet) {
+            System.out.println(element);
+        }
+
+        // Clear the set
+        mySet.clear();
+
+        // Print final size
+        System.out.println("Final set size: " + mySet.size());
     }
 }
